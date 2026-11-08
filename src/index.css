@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   THEME TOKENS — RGB triplets (no commas) so Tailwind can add opacity.
+   Light theme = :root, dark theme = .dark
+------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --bg: 248 250 249; /* #F8FAF9 off-white */
+    --surface: 255 255 255;
+    --surface-2: 240 245 243;
+    --line: 226 232 240;
+    --ink: 15 23 42; /* #0F172A */
+    --muted: 71 85 105; /* #475569 */
+    --accent: 4 120 87; /* #047857 — AA on light backgrounds */
+    --accent-from: 5 150 105; /* #059669 emerald-600 */
+    --accent-to: 13 148 136; /* #0D9488 teal-600 */
+    --accent-soft: 209 250 229; /* #D1FAE5 */
+    /* Darker gradient behind white button text (≥ 4.5:1 contrast) — same in both themes */
+    --btn-from: 4 120 87; /* #047857 emerald-700 */
+    --btn-to: 15 118 110; /* #0F766E teal-700 */
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 11 18 32; /* #0B1220 deep navy */
+    --surface: 17 26 46; /* #111A2E */
+    --surface-2: 22 33 58;
+    --line: 31 42 68; /* #1F2A44 */
+    --ink: 230 237 247; /* #E6EDF7 */
+    --muted: 148 163 184; /* #94A3B8 */
+    --accent: 52 211 153; /* #34D399 */
+    --accent-from: 16 185 129; /* #10B981 emerald-500 */
+    --accent-to: 20 184 166; /* #14B8A6 teal-500 */
+    --accent-soft: 6 78 59; /* #064E3B */
+    color-scheme: dark;
+  }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-bg font-body text-fluid-base text-ink antialiased;
+    overflow-x: clip;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading tracking-tight;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  img, svg, video {
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent-from));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: rgb(var(--accent-from) / 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-accent-gradient bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-soft;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-surface-2 px-3 py-1 text-fluid-xs font-medium text-ink/80;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-ink/80 transition
+      hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.55) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.55) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}

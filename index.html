@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO — update the URLs once your site is deployed -->
+    <title>Jerome Oswald Ebenezer J | Software Developer &amp; MERN Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Jerome Oswald Ebenezer J — Software Developer from Tamil Nadu, India, building fast, accessible web apps with React, Node.js, .NET, MongoDB and MySQL."
+    />
+    <meta name="author" content="Jerome Oswald Ebenezer J" />
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F8FAF9" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://YOUR_SITE_URL/" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR_SITE_URL/" />
+    <meta property="og:title" content="Jerome Oswald Ebenezer J | Software Developer" />
+    <meta
+      property="og:description"
+      content="MERN full stack & .NET developer building fast, accessible web experiences."
+    />
+    <meta property="og:image" content="https://YOUR_SITE_URL/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jerome Oswald Ebenezer J | Software Developer" />
+    <meta
+      name="twitter:description"
+      content="MERN full stack & .NET developer building fast, accessible web experiences."
+    />
+    <meta name="twitter:image" content="https://YOUR_SITE_URL/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Non-render-blocking font load -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Hero photo is the LCP element: start fetching it immediately -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/profile.webp"
+      imagesrcset="/images/profile-360.webp 360w, /images/profile.webp 640w"
+      imagesizes="(min-width: 1024px) 26rem, (min-width: 640px) 18rem, 68vw"
+      fetchpriority="high"
+    />
+
+    <!-- Apply saved / system theme before first paint (prevents flash) -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Please enable JavaScript to view this portfolio.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
